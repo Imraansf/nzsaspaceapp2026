@@ -416,8 +416,8 @@ export const CesiumPlanetaryViewer: React.FC<CesiumPlanetaryViewerProps> = ({
 
     const gltfUrl = selectedArtifact.model3dUrl || (
       body === 'mars'
-        ? 'https://raw.githubusercontent.com/nasa/NASA-3D-Resources/main/3D%20Models/Curiosity/Curiosity.glb'
-        : 'https://raw.githubusercontent.com/nasa/NASA-3D-Resources/main/3D%20Models/Apollo_11_Lunar_Module/Apollo_11_LM.glb'
+        ? 'https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Models/Mars%20Exploration%20Rover%20-%20Opportunity%20(MER-B)/Mars%20Exploration%20Rover%20-%20Opportunity%20(MER-B).glb'
+        : '/models/Apollo_Lunar_Module.glb'
     );
 
     const position = Cesium.Cartesian3.fromDegrees(lon, lat, 0.0, planetaryEllipsoid);

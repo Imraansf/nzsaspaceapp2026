@@ -104,8 +104,6 @@ export const MOON_ARTIFACTS: Artifact[] = [
       'Surveillance TV Camera (25 mm and 100 mm lenses beneath a movable mirror)',
       'Robotic Surface Sampler Scoop',
     ],
-    model3dUrl:
-      'https://raw.githubusercontent.com/nasa/NASA-3D-Resources/main/3D%20Models/Surveyor/Surveyor.glb',
     nasa3dResourceUrl: 'https://github.com/nasa/NASA-3D-Resources',
   },
   {
@@ -180,8 +178,7 @@ export const MOON_ARTIFACTS: Artifact[] = [
       'Laser Ranging Retroreflector (LRRR)',
       'Solar Wind Composition Foil Collector',
     ],
-    model3dUrl:
-      'https://raw.githubusercontent.com/nasa/NASA-3D-Resources/main/3D%20Models/Apollo_11_Lunar_Module/Apollo_11_LM.glb',
+    model3dUrl: '/models/Apollo_Lunar_Module.glb',
     nasa3dResourceUrl: 'https://github.com/nasa/NASA-3D-Resources',
   },
   {
@@ -262,8 +259,7 @@ export const MOON_ARTIFACTS: Artifact[] = [
       'Lunar Surface Magnetometer',
       'Solar Wind Spectrometer',
     ],
-    model3dUrl:
-      'https://raw.githubusercontent.com/nasa/NASA-3D-Resources/main/3D%20Models/Apollo_11_Lunar_Module/Apollo_11_LM.glb',
+    model3dUrl: '/models/Apollo_Lunar_Module.glb',
     nasa3dResourceUrl: 'https://github.com/nasa/NASA-3D-Resources',
   },
   {
@@ -348,8 +344,7 @@ export const MOON_ARTIFACTS: Artifact[] = [
       'Lunar Dust Detector',
       'Heat Flow Experiment',
     ],
-    model3dUrl:
-      'https://raw.githubusercontent.com/nasa/NASA-3D-Resources/main/3D%20Models/Apollo_11_Lunar_Module/Apollo_11_LM.glb',
+    model3dUrl: '/models/Apollo_Lunar_Module.glb',
     nasa3dResourceUrl: 'https://github.com/nasa/NASA-3D-Resources',
   },
 ];
@@ -436,7 +431,7 @@ export const MARS_ARTIFACTS: Artifact[] = [
       'Weather Package',
     ],
     model3dUrl:
-      'https://raw.githubusercontent.com/nasa/NASA-3D-Resources/main/3D%20Models/Viking_Lander/Viking.glb',
+      'https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Models/Viking%20Lander/Viking%20Lander.glb',
     nasa3dResourceUrl: 'https://github.com/nasa/NASA-3D-Resources',
   },
   {
@@ -511,8 +506,6 @@ export const MARS_ARTIFACTS: Artifact[] = [
       'Rover cameras',
       'Atmospheric Structure & Meteorology Package',
     ],
-    model3dUrl:
-      'https://raw.githubusercontent.com/nasa/NASA-3D-Resources/main/3D%20Models/Pathfinder/Pathfinder.glb',
     nasa3dResourceUrl: 'https://github.com/nasa/NASA-3D-Resources',
   },
   {
@@ -597,7 +590,7 @@ export const MARS_ARTIFACTS: Artifact[] = [
       'Mini-TES',
     ],
     model3dUrl:
-      'https://raw.githubusercontent.com/nasa/NASA-3D-Resources/main/3D%20Models/MER_Opportunity/Opportunity.glb',
+      'https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Models/Mars%20Exploration%20Rover%20-%20Opportunity%20(MER-B)/Mars%20Exploration%20Rover%20-%20Opportunity%20(MER-B).glb',
     nasa3dResourceUrl: 'https://github.com/nasa/NASA-3D-Resources',
   },
   {
@@ -675,8 +668,6 @@ export const MARS_ARTIFACTS: Artifact[] = [
       'MECA Wet Chemistry & Microscopy Lab',
       'Meteorological Station (MET)',
     ],
-    model3dUrl:
-      'https://raw.githubusercontent.com/nasa/NASA-3D-Resources/main/3D%20Models/Phoenix/Phoenix.glb',
     nasa3dResourceUrl: 'https://github.com/nasa/NASA-3D-Resources',
   },
   {
@@ -755,7 +746,7 @@ export const MARS_ARTIFACTS: Artifact[] = [
       'Deployment cameras',
     ],
     model3dUrl:
-      'https://raw.githubusercontent.com/nasa/NASA-3D-Resources/main/3D%20Models/InSight/InSight.glb',
+      'https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Models/InSight%20Cruise%20Lander/InSight%20Cruise%20Lander%20(arm%20deployed).glb',
     nasa3dResourceUrl: 'https://github.com/nasa/NASA-3D-Resources',
   },
   {
@@ -835,7 +826,7 @@ export const MARS_ARTIFACTS: Artifact[] = [
       'Two-way radio link via Perseverance',
     ],
     model3dUrl:
-      'https://raw.githubusercontent.com/nasa/NASA-3D-Resources/main/3D%20Models/Ingenuity/Ingenuity.glb',
+      'https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Models/Ingenuity%20Mars%20Helicopter/Ingenuity%20Mars%20Helicopter.glb',
     nasa3dResourceUrl: 'https://github.com/nasa/NASA-3D-Resources',
   },
 ];
@@ -923,7 +914,7 @@ export const DEEP_SPACE_ARTIFACTS: Artifact[] = [
       'Meteoroid Detectors',
     ],
     model3dUrl:
-      'https://raw.githubusercontent.com/nasa/NASA-3D-Resources/main/3D%20Models/Pioneer_10/Pioneer.glb',
+      'https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Models/Pioneer%2010/Pioneer%2010.glb',
     nasa3dResourceUrl: 'https://github.com/nasa/NASA-3D-Resources',
   },
   {
@@ -1005,7 +996,7 @@ export const DEEP_SPACE_ARTIFACTS: Artifact[] = [
       'Charged Particle & Cosmic Ray Telescopes',
     ],
     model3dUrl:
-      'https://raw.githubusercontent.com/nasa/NASA-3D-Resources/main/3D%20Models/Pioneer_10/Pioneer.glb',
+      'https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Models/Pioneer%2010/Pioneer%2010.glb',
     nasa3dResourceUrl: 'https://github.com/nasa/NASA-3D-Resources',
   },
   {
@@ -1087,6 +1078,9 @@ export const DEEP_SPACE_ARTIFACTS: Artifact[] = [
       'Magnetometer (MAG)',
       'Laser Rangefinder (NLR)',
     ],
+    model3dUrl:
+      'https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Models/NEAR%20Shoemaker/NEAR%20Shoemaker.glb',
+    nasa3dResourceUrl: 'https://github.com/nasa/NASA-3D-Resources',
   },
   {
     id: 'dawn',
@@ -1163,6 +1157,9 @@ export const DEEP_SPACE_ARTIFACTS: Artifact[] = [
       'Visible and Infrared Mapping Spectrometer (VIR)',
       'Gamma Ray and Neutron Detector (GRaND)',
     ],
+    model3dUrl:
+      'https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Models/Dawn/Dawn.glb',
+    nasa3dResourceUrl: 'https://github.com/nasa/NASA-3D-Resources',
   },
   {
     id: 'kepler',
@@ -1236,7 +1233,7 @@ export const DEEP_SPACE_ARTIFACTS: Artifact[] = [
       'Wide-field CCD Photometer array (stared at 150,000+ stars in Cygnus and 500,000+ stars in K2)',
     ],
     model3dUrl:
-      'https://raw.githubusercontent.com/nasa/NASA-3D-Resources/main/3D%20Models/Kepler/Kepler.glb',
+      'https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Models/Kepler%20(A)/Kepler%20(A).glb',
     nasa3dResourceUrl: 'https://github.com/nasa/NASA-3D-Resources',
   },
 ];

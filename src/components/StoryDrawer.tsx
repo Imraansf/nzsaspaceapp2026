@@ -17,6 +17,7 @@ import {
   Play,
   ExternalLink,
   Quote,
+  Footprints,
 } from 'lucide-react';
 import { useNASAVoice } from '../hooks/useNASAVoice';
 
@@ -26,6 +27,7 @@ interface StoryDrawerProps {
   onNextArtifact: () => void;
   onPrevArtifact: () => void;
   onInspectModel?: (artifact: Artifact) => void;
+  onLaunchSite?: () => void;
 }
 
 function extractYouTubeId(url: string): string | null {
@@ -46,6 +48,7 @@ export const StoryDrawer: React.FC<StoryDrawerProps> = ({
   onNextArtifact,
   onPrevArtifact,
   onInspectModel,
+  onLaunchSite,
 }) => {
   if (!artifact) return null;
 
@@ -111,8 +114,22 @@ export const StoryDrawer: React.FC<StoryDrawerProps> = ({
           </div>
         </div>
 
-        {/* Right Actions: 3D Model Inspector + Prev/Next */}
+        {/* Right Actions: Land on Site + 3D Model Inspector + Prev/Next */}
         <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+          {artifact.id === 'apollo-11-eagle-easep' && onLaunchSite && (
+            <button
+              onClick={() => {
+                nasaVoice.stop();
+                onLaunchSite();
+              }}
+              className="min-h-[40px] flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-amber-400 hover:bg-amber-300 text-zinc-950 transition-colors shadow-md"
+              title="Walk Tranquility Base on the Moon"
+            >
+              <Footprints className="w-4 h-4" />
+              <span>Land on site</span>
+            </button>
+          )}
+
           {onInspectModel && (
             <button
               onClick={() => onInspectModel(artifact)}

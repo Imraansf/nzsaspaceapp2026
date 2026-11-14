@@ -20,8 +20,10 @@ import {
   X,
   Menu,
   Home,
+  Footprints,
 } from 'lucide-react';
 import { ModelInspectorModal } from './components/ModelInspectorModal';
+import { TranquilitySiteModal } from './components/TranquilitySiteModal';
 import {
   toggleAudioMute,
   playTelemetryBeep,
@@ -42,6 +44,7 @@ export default function App() {
   const [isTimelineCollapsed, setIsTimelineCollapsed] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSiteExplorerOpen, setIsSiteExplorerOpen] = useState(false);
 
   const artifacts = useMemo(() => getArtifacts(currentBody), [currentBody]);
   const landmarks = useMemo(() => getPlanetaryLandmarks(currentBody), [currentBody]);
@@ -109,7 +112,8 @@ export default function App() {
 
   const isOverlayOpen = Boolean(
     (selectedArtifact && isDossierOpen) ||
-    Boolean(inspectingArtifact)
+    Boolean(inspectingArtifact) ||
+    isSiteExplorerOpen
   );
 
   if (showLanding) {
@@ -347,16 +351,31 @@ export default function App() {
             </div>
           </div>
 
-          <button
-            onClick={() => {
-              playTelemetryBeep(650);
-              setIsDossierOpen(true);
-            }}
-            className="mt-2.5 w-full py-1.5 px-3 rounded-lg bg-white text-zinc-950 font-semibold text-xs flex items-center justify-center gap-1 transition-all hover:bg-zinc-100 shadow-md"
-          >
-            <span>Get details</span>
-            <ChevronRight className="w-3.5 h-3.5" />
-          </button>
+          <div className="mt-2.5 flex flex-col gap-2">
+            <button
+              onClick={() => {
+                playTelemetryBeep(650);
+                setIsDossierOpen(true);
+              }}
+              className="w-full py-1.5 px-3 rounded-lg bg-white text-zinc-950 font-semibold text-xs flex items-center justify-center gap-1 transition-all hover:bg-zinc-100 shadow-md"
+            >
+              <span>Get details</span>
+              <ChevronRight className="w-3.5 h-3.5" />
+            </button>
+
+            {selectedArtifact.id === 'apollo-11-eagle-easep' && (
+              <button
+                onClick={() => {
+                  playSuccessChime();
+                  setIsSiteExplorerOpen(true);
+                }}
+                className="w-full py-1.5 px-3 rounded-lg bg-amber-400 hover:bg-amber-300 text-zinc-950 font-semibold text-xs flex items-center justify-center gap-1.5 transition-all shadow-md"
+              >
+                <Footprints className="w-3.5 h-3.5" />
+                <span>Land on site</span>
+              </button>
+            )}
+          </div>
         </div>
       )}
 
@@ -368,6 +387,10 @@ export default function App() {
           onNextArtifact={handleNextArtifact}
           onPrevArtifact={handlePrevArtifact}
           onInspectModel={handleOpenCadInspector}
+          onLaunchSite={() => {
+            playSuccessChime();
+            setIsSiteExplorerOpen(true);
+          }}
         />
       )}
 
@@ -377,6 +400,11 @@ export default function App() {
           artifact={inspectingArtifact}
           onClose={() => setInspectingArtifact(null)}
         />
+      )}
+
+      {/* 8. Tranquility Base: Walk the Site Experience */}
+      {isSiteExplorerOpen && (
+        <TranquilitySiteModal onClose={() => setIsSiteExplorerOpen(false)} />
       )}
     </div>
   );

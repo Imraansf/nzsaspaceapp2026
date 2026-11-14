@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState, useMemo } from 'react';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
 import { Artifact } from '../types/space';
 import {
   X,
@@ -586,9 +587,13 @@ export const ModelInspectorModal: React.FC<ModelInspectorModalProps> = ({
     scene.add(modelGroup);
 
     // Load official NASA 3D Resources GLTF/GLB model if available
+    let dracoLoader: DRACOLoader | null = null;
     if (artifact.model3dUrl) {
       setIsLoadingGltf(true);
+      dracoLoader = new DRACOLoader();
+      dracoLoader.setDecoderPath('/draco/');
       const loader = new GLTFLoader();
+      loader.setDRACOLoader(dracoLoader);
       loader.load(
         artifact.model3dUrl,
         (gltf) => {
@@ -688,6 +693,9 @@ export const ModelInspectorModal: React.FC<ModelInspectorModalProps> = ({
     return () => {
       cancelAnimationFrame(animationFrameId);
       window.removeEventListener('resize', handleResize);
+      if (dracoLoader) {
+        dracoLoader.dispose();
+      }
       if (rendererRef.current) {
         rendererRef.current.dispose();
       }

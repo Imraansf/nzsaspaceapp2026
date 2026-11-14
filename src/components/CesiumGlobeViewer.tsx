@@ -653,6 +653,7 @@ export const CesiumGlobeViewer: React.FC<CesiumGlobeViewerProps> = React.memo(({
         distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 500000),
         disableDepthTestDistance: Number.POSITIVE_INFINITY,
       },
+      relicData: relic,
     });
 
     viewer.scene.requestRender();
