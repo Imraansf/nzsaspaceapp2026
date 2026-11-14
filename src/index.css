@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Mono:wght@300;400;500&display=swap');
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-inter: 'Inter', system-ui, sans-serif;
+    --font-public-sans: 'Public Sans', system-ui, sans-serif;
+    --font-dm-mono: 'DM Mono', monospace;
+    
+    --font-heading: var(--font-inter);
+    --font-body: var(--font-public-sans);
+    --font-mono: var(--font-dm-mono);
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: #050608;
+    color: #e2e8f0;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+    font-weight: 700;
+  }
+
+  code, pre, .font-mono, .font-telemetry {
+    font-family: var(--font-mono) !important;
+    letter-spacing: 0.01em;
+  }
+}
+
+/* Custom cosmic animations and effects */
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(1000%); }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-scanline {
+  animation: scanline 8s linear infinite;
+}
+
+@keyframes float-astronaut {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-4px) rotate(1.5deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(-1deg);
+  }
+  75% {
+    transform: translateY(-4px) rotate(1deg);
+  }
+}
+
+@keyframes wave-hand {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(14deg);
+  }
+  75% {
+    transform: rotate(-8deg);
+  }
+}
+
+@keyframes thruster-pulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scaleY(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scaleY(1.4);
+  }
+}
+
+/* Custom scrollbar for deep space telemetry */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0d1a;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Cesium 3D Tiles customizations */
+.cesium-viewer {
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden !important;
+}
+
+.cesium-widget,
+.cesium-widget canvas {
+  width: 100% !important;
+  height: 100% !important;
+  outline: none;
+}
+
+.cesium-viewer-bottom {
+  position: absolute !important;
+  bottom: 8px !important;
+  left: 8px !important;
+  z-index: 10 !important;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+  pointer-events: auto;
+}
+
+.cesium-viewer-bottom:hover {
+  opacity: 1;
+}
+
+.cesium-credit-textContainer,
+.cesium-credit-logoContainer {
+  font-size: 10px !important;
+  font-family: monospace;
+}
+
+/* Mobile responsive utilities */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.touch-manipulation {
+  touch-action: manipulation;
+}
+.momentum-scroll {
+  -webkit-overflow-scrolling: touch;
+}
+
